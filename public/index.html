@@ -284,6 +284,25 @@
                     </select>
                 </div>
                 
+                <div class="form-group">
+                    <label for="length">📏 Preferred Length</label>
+                    <select id="length">
+                        <option value="short">Short (100–150 words)</option>
+                        <option value="medium">Medium (200–250 words)</option>
+                        <option value="long">Long (300–350 words)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hashtags">🏷️ Primary Hashtags</label>
+                    <input type="text" id="hashtags" placeholder="e.g., #leadership #growth #innovation #success">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mentions">👤 Optional Tags/Mentions</label>
+                    <input type="text" id="mentions" placeholder="e.g., @colleague @company @mentor (optional)">
+                </div>
+                
                 <button type="submit" class="generate-btn" id="generateBtn">
                     Generate LinkedIn Post with AI ✨
                 </button>
@@ -325,6 +344,9 @@
             const content = document.getElementById('content').value.trim();
             const result = document.getElementById('result').value.trim();
             const tone = document.getElementById('tone').value;
+            const length = document.getElementById('length').value;
+            const hashtags = document.getElementById('hashtags').value.trim();
+            const mentions = document.getElementById('mentions').value.trim();
 
             // Validation
             if (!content) {
@@ -346,7 +368,10 @@
                         topic,
                         content,
                         result,
-                        tone
+                        tone,
+                        length,
+                        hashtags,
+                        mentions
                     })
                 });
 
