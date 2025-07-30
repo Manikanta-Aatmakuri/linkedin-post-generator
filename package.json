@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "AI-powered LinkedIn post generator using Google Gemini",
   "main": "index.html",
+  "type": "module",
   "scripts": {
     "dev": "vercel dev",
     "build": "echo 'No build step needed'",
