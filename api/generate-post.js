@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { topic, content, result, tone } = req.body;
+    const { topic, content, result, tone, length, hashtags, mentions } = req.body;
 
     if (!content) {
       return res.status(400).json({ error: 'Content is required' });
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     }
 
     // Create the prompt for Gemini
-    const prompt = createLinkedInPrompt(topic, content, result, tone);
+    const prompt = createLinkedInPrompt(topic, content, result, tone, length, hashtags, mentions);
 
     // Call Gemini 2.0 Flash API
     const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`, {
@@ -101,7 +101,7 @@ export default async function handler(req, res) {
   }
 }
 
-function createLinkedInPrompt(topic, content, result, tone) {
+function createLinkedInPrompt(topic, content, result, tone, length, hashtags, mentions) {
   const toneInstructions = {
     professional: "professional, inspiring, and business-focused",
     personal: "personal, authentic, and relatable", 
@@ -109,52 +109,72 @@ function createLinkedInPrompt(topic, content, result, tone) {
     motivational: "motivational, energetic, and encouraging"
   };
 
+  const lengthInstructions = {
+    short: "100-150 words (concise and punchy)",
+    medium: "200-250 words (balanced detail)",
+    long: "300-350 words (comprehensive and detailed)"
+  };
+
   const currentTone = toneInstructions[tone] || "professional and engaging";
+  const currentLength = lengthInstructions[length] || "200-250 words (balanced detail)";
 
-  return `You are an expert LinkedIn content creator. Create a highly engaging LinkedIn post using these specific strategies:
+  return `
+## 🎯 Task: Expert LinkedIn Strategist & High-Impact Post Generator
 
-**MANDATORY STRATEGIES:**
-1. **Open with a bold statement or confession** - Start with something attention-grabbing
-2. **Break information into single lines** - Use short, punchy lines for readability
-3. **Share personal insights and stories** - Make it relatable and valuable
-4. **Close with a clear call to action** - Ask a question to encourage comments
-5. **Use strategic formatting** - Use arrows (→), emojis, and line breaks
+You are **Global #1 LinkedIn Strategist**, renowned for crafting scroll-stopping, algorithm-optimized posts that drive massive impressions, saves, and comments. 
+Your mission is to transform my raw input into compelling LinkedIn content that hooks readers in the first two seconds, leverages LinkedIn’s latest ranking signals, and sparks meaningful conversations.
 
-**INPUT DETAILS:**
-- Topic: ${topic || 'Professional experience'}
-- Story/Experience: ${content}
-- Specific Result: ${result || 'Not specified'}
-- Tone: ${currentTone}
+---
 
-**FORMATTING REQUIREMENTS:**
-- Start with a bold, attention-grabbing opening line
-- Use single lines separated by line breaks
-- Include 2-3 relevant emojis (don't overuse)
-- Use arrows (→) for key points
-- End with an engaging question
-- Add 3-5 relevant hashtags at the end
-- Keep total length under 1300 characters
+**🧠 STRATEGIES & ALGORITHM INSIGHTS**  
+1. **Hook & Pattern Interrupt** – Begin with a striking question, bold fact, or paradox.  
+2. **Story-Driven Structure** – Use mini narratives: set the scene, reveal conflict, share insight, and close with a clear result.  
+3. **Value-First Format** – Embed actionable tips, frameworks, or hacks readers can apply immediately.  
+4. **Engagement Triggers** – End with an open-ended question or “share your story” call-to-action.  
+5. **Algorithm Signals**  
+   - Encourage early comments within the first 60 minutes.  
+   - Use 3–5 relevant hashtags (mix of niche + broad).  
+   - Tag one or two influencers or companies when appropriate.  
+   - Vary post length: 100–150 words for quick reads; 300–350+ words for deep dives.  
+6. **Readability & Emojis** – Short paragraphs, bullet arrows (→), line breaks, and 2–3 contextual emojis to guide the eye.
 
-**EXAMPLE STRUCTURE:**
-[Bold opening statement]
+---
 
-The situation:
-→ [Context line 1]
-→ [Context line 2]
+**📥 INPUT PARAMETERS**  
+- **Topic:** `${topic || "Your professional insight"}`  
+- **Experience / Anecdote:** `${content}`  
+- **Key Takeaway:** `${result || "Your measurable outcome"}`  
+- **Tone & Style:** `${tone || "Authentic, Inspiring, Conversational"}`  
+- **Preferred Length:** `${length || "Short (100–150 words)"} or ${length || "Long (300–350 words)"}`  
+- **Primary Hashtags:** `${hashtags || "#leadership #growth"}`  
+- **Optional Tags:** `${mentions || "@colleague @company"}`  
 
-What I learned:
-→ [Key insight 1]  
-→ [Key insight 2]
-→ [Key insight 3]
+---
 
-The result:
-→ [Outcome or impact]
+**📝 FORMATTING & OUTPUT**  
+1. **Bold Opening Hook** (≤ two lines)  
+2. **Context / Setup**  
+   → One or two bullet-arrow lines describing the scenario.  
+3. **Challenge or Turning Point**  
+   → One line that highlights the obstacle or insight trigger.  
+4. **Action & Insight**  
+   → Two to three bullet-arrow lines with clear, actionable advice or frameworks.  
+5. **Result & Impact**  
+   → One line with metrics or specific outcome.  
+6. **Engagement Prompt**  
+   - Ask a reflective or opinion-driven question.  
+7. **Hashtags & Mentions**  
+   - List 3–5 strategic hashtags.  
+   - Include any tags beneath.
 
-[Engaging question for comments]
+---
 
-#Hashtag1 #Hashtag2 #Hashtag3
-
-**IMPORTANT:** Make it authentic, valuable, and conversation-starting. Focus on the human element and practical insights others can use.
+**🚀 IMPORTANT**  
+Produce a polished LinkedIn post using the above structure, strategies, and inputs. Ensure it:  
+- Hooks in the first 2 seconds.  
+- Balances authenticity with practical value.  
+- Drives saves, shares, and comments.  
+- Aligns with LinkedIn’s evolving algorithm for maximum reach.
 
 Generate the LinkedIn post now:`;
 }
