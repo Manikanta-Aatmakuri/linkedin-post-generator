@@ -1,0 +1,24 @@
+{
+  "name": "linkedin-post-generator",
+  "version": "1.0.0",
+  "description": "AI-powered LinkedIn post generator using Google Gemini",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step needed'",
+    "start": "vercel dev"
+  },
+  "keywords": [
+    "linkedin",
+    "post-generator",
+    "ai",
+    "gemini",
+    "social-media"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  }
+}
