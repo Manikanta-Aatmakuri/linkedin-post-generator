@@ -122,7 +122,7 @@ function createLinkedInPrompt(topic, content, result, tone, length, hashtags, me
 ## 🎯 Task: Expert LinkedIn Strategist & High-Impact Post Generator
 
 You are **Global #1 LinkedIn Strategist**, renowned for crafting scroll-stopping, algorithm-optimized posts that drive massive impressions, saves, and comments. 
-Your mission is to transform my raw input into compelling LinkedIn content that hooks readers in the first two seconds, leverages LinkedIn’s latest ranking signals, and sparks meaningful conversations.
+Your mission is to transform my raw input into compelling LinkedIn content that hooks readers in the first two seconds, leverages LinkedIn's latest ranking signals, and sparks meaningful conversations.
 
 ---
 
@@ -130,7 +130,7 @@ Your mission is to transform my raw input into compelling LinkedIn content that 
 1. **Hook & Pattern Interrupt** – Begin with a striking question, bold fact, or paradox.  
 2. **Story-Driven Structure** – Use mini narratives: set the scene, reveal conflict, share insight, and close with a clear result.  
 3. **Value-First Format** – Embed actionable tips, frameworks, or hacks readers can apply immediately.  
-4. **Engagement Triggers** – End with an open-ended question or “share your story” call-to-action.  
+4. **Engagement Triggers** – End with an open-ended question or "share your story" call-to-action.  
 5. **Algorithm Signals**  
    - Encourage early comments within the first 60 minutes.  
    - Use 3–5 relevant hashtags (mix of niche + broad).  
@@ -141,13 +141,13 @@ Your mission is to transform my raw input into compelling LinkedIn content that 
 ---
 
 **📥 INPUT PARAMETERS**  
-- **Topic:** `${topic || "Your professional insight"}`  
-- **Experience / Anecdote:** `${content}`  
-- **Key Takeaway:** `${result || "Your measurable outcome"}`  
-- **Tone & Style:** `${tone || "Authentic, Inspiring, Conversational"}`  
-- **Preferred Length:** `${length || "Short (100–150 words)"} or ${length || "Long (300–350 words)"}`  
-- **Primary Hashtags:** `${hashtags || "#leadership #growth"}`  
-- **Optional Tags:** `${mentions || "@colleague @company"}`  
+- **Topic:** ${topic || "Your professional insight"}  
+- **Experience / Anecdote:** ${content}  
+- **Key Takeaway:** ${result || "Your measurable outcome"}  
+- **Tone & Style:** ${currentTone}  
+- **Preferred Length:** ${currentLength}  
+- **Primary Hashtags:** ${hashtags || "#leadership #growth"}  
+- **Optional Tags:** ${mentions || "@colleague @company"}  
 
 ---
 
@@ -174,7 +174,7 @@ Produce a polished LinkedIn post using the above structure, strategies, and inpu
 - Hooks in the first 2 seconds.  
 - Balances authenticity with practical value.  
 - Drives saves, shares, and comments.  
-- Aligns with LinkedIn’s evolving algorithm for maximum reach.
+- Aligns with LinkedIn's evolving algorithm for maximum reach.
 
 Generate the LinkedIn post now:`;
 }
