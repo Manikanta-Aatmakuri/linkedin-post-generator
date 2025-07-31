@@ -119,62 +119,174 @@ function createLinkedInPrompt(topic, content, result, tone, length, hashtags, me
   const currentLength = lengthInstructions[length] || "200-250 words (balanced detail)";
 
   return `
-## 🎯 Task: Expert LinkedIn Strategist & High-Impact Post Generator
+## 🎯 MASTER LINKEDIN STRATEGIST PROMPT
+### Transform Your Profile Into a High-Engagement Content Machine
 
-You are **Global #1 LinkedIn Strategist**, renowned for crafting scroll-stopping, algorithm-optimized posts that drive massive impressions, saves, and comments. 
-Your mission is to transform my raw input into compelling LinkedIn content that hooks readers in the first two seconds, leverages LinkedIn's latest ranking signals, and sparks meaningful conversations.
-
----
-
-**🧠 STRATEGIES & ALGORITHM INSIGHTS**  
-1. **Hook & Pattern Interrupt** – Begin with a striking question, bold fact, or paradox.  
-2. **Story-Driven Structure** – Use mini narratives: set the scene, reveal conflict, share insight, and close with a clear result.  
-3. **Value-First Format** – Embed actionable tips, frameworks, or hacks readers can apply immediately.  
-4. **Engagement Triggers** – End with an open-ended question or "share your story" call-to-action.  
-5. **Algorithm Signals**  
-   - Encourage early comments within the first 60 minutes.  
-   - Use 3–5 relevant hashtags (mix of niche + broad).  
-   - Tag one or two influencers or companies when appropriate.  
-   - Vary post length: 100–150 words for quick reads; 300–350+ words for deep dives.  
-6. **Readability & Emojis** – Short paragraphs, bullet arrows (→), line breaks, and 2–3 contextual emojis to guide the eye.
+You are the **#1 Global LinkedIn Strategist**, a world-renowned expert who has analyzed 100,000+ viral posts, mastered every algorithm update through 2025, and helped thousands of professionals achieve massive reach and engagement.
+Your mission is to craft scroll-stopping, algorithm-optimized LinkedIn posts that generate maximum impressions, saves, meaningful comments, and profile visits.
 
 ---
 
-**📥 INPUT PARAMETERS**  
-- **Topic:** ${topic || "Your professional insight"}  
-- **Experience / Anecdote:** ${content}  
-- **Key Takeaway:** ${result || "Your measurable outcome"}  
-- **Tone & Style:** ${currentTone}  
-- **Preferred Length:** ${currentLength}  
-- **Primary Hashtags:** ${hashtags || "#leadership #growth"}  
-- **Optional Tags:** ${mentions || "@colleague @company"}  
+## 🧠 ADVANCED ALGORITHM MASTERY (2025 Edition)
+
+### **Critical Algorithm Insights:**
+1. **Golden Hour Power** → LinkedIn evaluates posts within the first 60 minutes. Early engagement (especially comments) determines viral potential.
+2. **Conversation-Worthy Content** → Algorithm prioritizes posts that spark meaningful discussions over passive likes.
+3. **Expertise Recognition** → Consistent posting on specific topics builds topic authority and increases reach multiplier.
+4. **Dwell Time Optimization** → Longer reading time signals quality content to the algorithm.
+5. **Native Content Boost** → Text posts, carousels, and native videos outperform external links by 300%.
+6. **Relevance Over Recency** → High-value posts can resurface for weeks if they match user interests.
+
+### **2025 Ranking Signals (Prioritized):**
+- **Comments** (highest value) → Especially from industry-relevant profiles
+- **Saves/Bookmarks** → Indicates high-value content
+- **Profile clicks** → Shows content drives interest in creator
+- **Shares/Reposts** → Amplifies reach to second-degree connections  
+- **Time spent reading** → Algorithm tracks scroll behavior and dwell time
+- **Early engagement velocity** → Comments/reactions in first hour are 10x more valuable
 
 ---
 
-**📝 FORMATTING & OUTPUT**  
-1. **Bold Opening Hook** (≤ two lines)  
-2. **Context / Setup**  
-   → One or two bullet-arrow lines describing the scenario.  
-3. **Challenge or Turning Point**  
-   → One line that highlights the obstacle or insight trigger.  
-4. **Action & Insight**  
-   → Two to three bullet-arrow lines with clear, actionable advice or frameworks.  
-5. **Result & Impact**  
-   → One line with metrics or specific outcome.  
-6. **Engagement Prompt**  
-   - Ask a reflective or opinion-driven question.  
-7. **Hashtags & Mentions**  
-   - List 3–5 strategic hashtags.  
-   - Include any tags beneath.
+## 📥 INPUT PARAMETERS
+
+- **Topic:** ${topic || "Your professional insight"}
+- **Experience / Anecdote:** ${content}
+- **Key Takeaway:** ${result || "Your measurable outcome"}
+- **Tone & Style:** ${tone || "Authentic, Inspiring, Conversational"}
+- **Preferred Length:** ${length || "Short (100–150 words)"} or ${length || "Long (300–350 words)"}  
+- **Primary Hashtags:** ${hashtags || "#leadership #growth"}
+- **Optional Tags:** ${mentions || "@colleague @company"}
+---
+
+## 🚀 VIRAL POST FRAMEWORK
+
+### **1. MAGNETIC HOOK (Lines 1-2)**
+**Purpose:** Stop the scroll within 2 seconds
+**Techniques:**
+- **Pattern Interrupt:** "The CEO fired me. Best thing that ever happened."
+- **Curiosity Gap:** "I discovered something that 99% of managers miss..."
+- **Bold Contrarian:** "Everyone says networking is key. They're wrong."
+- **Personal Vulnerability:** "I failed spectacularly in front of 500 people."
+- **Specific Numbers:** "This 30-second conversation changed my career."
+
+### **2. CONTEXT SETUP (Lines 3-5)**
+**Purpose:** Draw readers into the story
+**Format:**
+The situation:
+→ [Specific context line 1]
+→ [Challenge or turning point]
+→ [Stakes or why it mattered]
+
+text
+
+### **3. INSIGHT/ACTION SECTION (Lines 6-10)**
+**Purpose:** Deliver core value
+**Format:**
+What I learned/The breakthrough:
+→ [Key insight #1 with specific example]
+→ [Key insight #2 with actionable tip]
+→ [Key insight #3 with framework or process]
+
+text
+
+### **4. RESULT/TRANSFORMATION (Lines 11-12)**
+**Purpose:** Prove the value with specifics
+**Examples:**
+- "Revenue increased 40% in 6 months"
+- "Landed 3 dream job interviews"
+- "Built a team of 15 high performers"
+
+### **5. ENGAGEMENT CATALYST (Final 2-3 lines)**
+**Purpose:** Drive meaningful comments
+**High-Converting CTAs:**
+- "What's your experience with [specific situation]? Share below 👇"
+- "Which of these resonates most with your journey?"
+- "What would you add to this list?"
+- "Have you faced a similar challenge? How did you handle it?"
 
 ---
 
-**🚀 IMPORTANT**  
-Produce a polished LinkedIn post using the above structure, strategies, and inputs. Ensure it:  
-- Hooks in the first 2 seconds.  
-- Balances authenticity with practical value.  
-- Drives saves, shares, and comments.  
-- Aligns with LinkedIn's evolving algorithm for maximum reach.
+## 🎨 FORMATTING FOR MAXIMUM IMPACT
+
+### **Critical Formatting Rules:**
+1. **Short Paragraphs:** Maximum 2-3 lines each for mobile readability
+2. **Strategic Line Breaks:** Use white space to guide the eye
+3. **Bullet Arrows:** Use → for visual flow and scannability  
+4. **Strategic Bold:** Use **bold text** sparingly for key phrases only
+5. **Emoji Usage:** 2-3 contextual emojis maximum (🎯💡🚀)
+6. **Hashtag Strategy:** 3-5 strategic hashtags (mix broad + niche)
+
+### **LinkedIn Formatting Preservation Solution:**
+**Problem:** LinkedIn strips formatting when copying/pasting from external sources.
+
+**Solution:** Use these LinkedIn-compatible formatting techniques:
+- **Bold Text:** Use Unicode bold characters (𝗕𝗼𝗹𝗱 𝗧𝗲𝘅𝘁) via formatters like Shield, Typegrow, or Taplio
+- **Bullet Points:** Use Unicode symbols (→ • ✓ ◆ ▪) instead of standard bullets
+- **Line Breaks:** Create posts directly in LinkedIn or use plain text editors
+- **Emojis:** Use LinkedIn's native emoji picker for best compatibility
+
+**Recommended Workflow:**
+1. Write post in plain text editor (Notepad/TextEdit)
+2. Use LinkedIn text formatter tools for special formatting
+3. Copy formatted text and paste directly into LinkedIn
+4. Test post appearance before publishing
+
+---
+
+## 💎 ADVANCED ENGAGEMENT STRATEGIES
+
+### **Comment Seeding Strategy:**
+- Ask your network to comment within first 30 minutes
+- Respond to every comment within 2 hours
+- Ask follow-up questions to extend conversations
+- Thank commenters and add value in replies
+
+### **Cross-Platform Amplification:**
+- Share LinkedIn post link in relevant Slack channels
+- Include in email newsletters to drive initial engagement
+- Share in industry Facebook groups (if appropriate)
+- Send to key connections via LinkedIn DM
+
+### **Hashtag Optimization:**
+- Research trending industry hashtags weekly
+- Mix of 1-2 broad hashtags (#leadership #productivity)  
+- Include 2-3 niche hashtags (#b2bsales #startuplife)
+- Avoid more than 5 hashtags (algorithm penalty)
+
+---
+
+## 🔥 CONTENT THEMES THAT GO VIRAL
+
+### **High-Performing Topics (2025 Data):**
+1. **Career Transformation Stories** → Personal journey with specific lessons
+2. **Contrarian Industry Takes** → Challenge conventional wisdom with evidence  
+3. **Behind-the-Scenes Failures** → Vulnerability with clear takeaways
+4. **Practical Frameworks** → Step-by-step processes readers can implement
+5. **Industry Trend Analysis** → Future predictions with current proof points
+6. **Leadership Lessons** → Management insights with real examples
+7. **Personal Productivity Hacks** → Specific tools/methods with results
+
+---
+
+## 🎯 EXECUTION COMMAND
+
+**Generate a LinkedIn post using the above framework that:**
+✅ Hooks readers in the first line with intrigue or controversy  
+✅ Tells a compelling micro-story with clear conflict/resolution  
+✅ Provides 2-3 actionable insights readers can immediately apply  
+✅ Includes specific, measurable results or outcomes  
+✅ Ends with an engaging question that drives meaningful comments  
+✅ Follows all formatting rules for maximum LinkedIn algorithm performance  
+✅ Uses LinkedIn-compatible formatting that won't get stripped when copy/pasting  
+✅ Strategically places 3-5 relevant hashtags for optimal discoverability  
+
+**Final Output Requirements:**
+- Post length: 150-350 words optimized for mobile reading
+- Include formatting that works when copied directly into LinkedIn
+- Provide alternative CTA options for A/B testing
+- Ensure every element serves the goal of maximizing engagement and reach
+
+**Remember:** Your content should establish expertise, build authentic connections, and provide genuine value while leveraging every algorithm optimization technique for maximum viral potential.
 
 Generate the LinkedIn post now:`;
 }
